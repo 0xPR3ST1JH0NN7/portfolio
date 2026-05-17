@@ -185,7 +185,7 @@ h1 {
 }
 
 .glitch-text::before {
-    content: 'WILLIAM PRESTIGIOVANNI';
+    content: attr(data-text);
     position: absolute;
     left: -2px;
     text-shadow: 1px 0 blue;
@@ -198,7 +198,7 @@ h1 {
 }
 
 .glitch-text::after {
-    content: 'WILLIAM PRESTIGIOVANNI';
+    content: attr(data-text);
     position: absolute;
     left: 2px;
     text-shadow: -1px 0 red;
@@ -355,7 +355,6 @@ h1 {
 .t-btn.close { background-color: #ff003c; box-shadow: 0 0 6px #ff003c; }
 
 .terminal-title {
-    font-size: 0.8rem;
     color: var(--text-muted);
     letter-spacing: 1px;
 }
@@ -433,4 +432,55 @@ footer {
     h1 { font-size: 2.2rem; }
     .social-links { flex-direction: column; }
     .cyber-btn { text-align: center; }
+}
+
+
+/* Griglia che imposta massimo 4 colonne */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px; /* Spazio abbondante tra i badge per farli respirare */
+    margin-top: 40px;
+}
+
+/* Stile della singola card ciotta */
+.cert-card {
+    background-color: #111;
+    border: 2px solid #333;
+    border-radius: 15px; /* Angoli arrotondati per un look più massiccio */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Assicura che l'immagine occupi tutto lo spazio disponibile senza sgranare */
+.cert-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+/* Effetto hacker al passaggio del mouse */
+.cert-card:hover {
+    border-color: #0f0; /* Bordo verde fosforo */
+    transform: translateY(-10px); /* Il badge si solleva */
+    box-shadow: 0 10px 20px rgba(0, 255, 0, 0.15); /* Bagliore verde sottostante */
+}
+
+/* Regole per la responsività sugli schermi più piccoli */
+@media (max-width: 992px) {
+    .cert-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 badge per riga sui tablet */
+    }
+}
+
+@media (max-width: 576px) {
+    .cert-grid {
+        grid-template-columns: 1fr; /* 1 badge per riga sugli smartphone */
+        gap: 20px;
+    }
 }

@@ -6,9 +6,17 @@ let currentPhrases = phrasesIT;
 function setLang(lang) {
     localStorage.setItem('portfolio_lang', lang);
     
-    // Aggiorna tutti gli elementi testuali e i link
+    // Aggiorna tutti gli elementi testuali, i link e il glitch
     document.querySelectorAll('[data-it]').forEach(el => {
-        el.innerHTML = el.getAttribute('data-' + lang);
+        const translatedText = el.getAttribute('data-' + lang);
+        
+        // Aggiorna il testo visibile
+        el.innerHTML = translatedText;
+        
+        // Se l'elemento usa l'effetto glitch, aggiorna anche il data-text
+        if (el.classList.contains('glitch-text') || el.hasAttribute('data-text')) {
+            el.setAttribute('data-text', translatedText);
+        }
         
         // Verifica se l'elemento ha un link specifico per la lingua e lo aggiorna
         if (el.hasAttribute('data-link-' + lang)) {
