@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Prestigiovanni | Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.8em' font-size='80' fill='%23ff003c' font-family='monospace' font-weight='bold'>&gt;_</text></svg>">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+    <div class="cyber-grid"></div>
+    <canvas id="matrixCanvas"></canvas>
+
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">0xpr3st1jh0nny //</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active" data-it="CORE" data-en="CORE">CORE</a></li>
+                <li><a href="projects.html" data-it="PROGETTI" data-en="PROJECTS">PROGETTI</a></li>
+                <li><a href="contact.html" data-it="CONTATTI" data-en="CONTACT">CONTATTI</a></li>
+                <li class="lang-switch">
+                    <span id="lang-it" onclick="setLang('it')">IT</span> <span style="color:var(--text-muted)">/</span> 
+                    <span id="lang-en" onclick="setLang('en')">EN</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" id="about" style="border-bottom: none;">
+            <div class="status-bar">
+                <span class="status-blink"></span>
+                <span data-it="INTERFACCIA SICURA ATTIVA // NODO_ROMA" data-en="SECURE INTERFACE ACTIVE // NODE_ROME">INTERFACCIA SICURA ATTIVA // NODO_ROMA</span>
+            </div>
+            
+            <h1 class="glitch-text">WILLIAM PRESTIGIOVANNI</h1>
+            <div class="typewriter-sub" id="typewriter"></div>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/tuo-profilo-linkedin" target="_blank" class="cyber-btn" data-it="PROFILO LINKEDIN" data-en="LINKEDIN PROFILE">PROFILO LINKEDIN</a>
+                <a href="https://github.com/tuo-profilo-github" target="_blank" class="cyber-btn" data-it="REPOSITORY GITHUB" data-en="GITHUB REPOSITORY">REPOSITORY GITHUB</a>
+            </div>
+
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="t-btn close"></span>
+                        <span class="t-btn"></span>
+                        <span class="t-btn"></span>
+                    </div>
+                    <div class="terminal-title">operator@prestigiovanni_c2:~</div>
+                    <div></div>
+                </div>
+                <div class="terminal-tabs">
+                    <button class="tab active" onclick="switchTab(event, 'bio')">system_info.sh</button>
+                    <button class="tab" onclick="switchTab(event, 'mission')">tactical_focus.env</button>
+                </div>
+                <div class="terminal-body">
+                    <div id="bio" class="tab-content active">
+                        <div class="cmd-line">> cat identity_profile.json</div>
+                        <div class="cmd-output" data-it="Come consulente di sicurezza offensiva, eseguo attività di vulnerability assessment e penetration test in contesti complessi legati ad applicazioni web, infrastrutture di rete e architetture Wi-Fi. Sviluppo soluzioni dedicate e simulazioni mirate per guidare in modo concreto la messa in sicurezza degli asset aziendali critici." data-en="As an offensive security consultant, I execute vulnerability assessments and penetration tests in complex environments including web applications, network infrastructures, and Wi-Fi architectures. I develop custom solutions and targeted simulations to effectively guide the securing of critical business assets.">
+                            Come consulente di sicurezza offensiva, eseguo attività di vulnerability assessment e penetration test in contesti complessi legati ad applicazioni web, infrastrutture di rete e architetture Wi-Fi. Sviluppo soluzioni dedicate e simulazioni mirate per guidare in modo concreto la messa in sicurezza degli asset aziendali critici.
+                        </div>
+                        <div class="cmd-line">> status --current</div>
+                        <div class="cmd-output" data-it="Attivo nel settore della sicurezza informatica, focalizzato sulla ricerca avanzata di vulnerabilità e sullo sviluppo di vettori di attacco controllati." data-en="Active in the cybersecurity sector, focused on advanced vulnerability research and the development of controlled attack vectors.">
+                            Attivo nel settore della sicurezza informatica, focalizzato sulla ricerca avanzata di vulnerabilità e sullo sviluppo di vettori di attacco controllati.
+                        </div>
+                    </div>
+                    <div id="mission" class="tab-content">
+                        <div class="cmd-line">> targeted_operations --list</div>
+                        <div class="cmd-output">
+                            <span data-it="• Red Teaming e simulazione di minacce persistenti avanzate (APT)" data-en="• Red Teaming and Advanced Persistent Threat (APT) simulation">• Red Teaming e simulazione di minacce persistenti avanzate (APT)</span><br>
+                            <span data-it="• Threat Intelligence applicata alla difesa proattiva" data-en="• Threat Intelligence applied to proactive defense">• Threat Intelligence applicata alla difesa proattiva</span><br>
+                            <span data-it="• Analisi dei protocolli wireless ed elusione di sistemi di sicurezza perimetrali" data-en="• Wireless protocol analysis and perimeter security evasion">• Analisi dei protocolli wireless ed elusione di sistemi di sicurezza perimetrali</span><br>
+                            <span data-it="• Ricerca e sviluppo di software offensivo custom per scopi di auditing autorizzato" data-en="• Research and development of custom offensive software for authorized auditing purposes">• Ricerca e sviluppo di software offensivo custom per scopi di auditing autorizzato</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div data-it="&copy; 2026 WILLIAM PRESTIGIOVANNI. TUTTI I DIRITTI RISERVATI." data-en="&copy; 2026 WILLIAM PRESTIGIOVANNI. ALL RIGHTS RESERVED.">&copy; 2026 WILLIAM PRESTIGIOVANNI. TUTTI I DIRITTI RISERVATI.</div>
+            <div>STAY SECURE // STAY OFFENSIVE</div>
+        </div>
+    </footer>
+
+    <script src="../script/script.js"></script>
+</body>
+</html>
