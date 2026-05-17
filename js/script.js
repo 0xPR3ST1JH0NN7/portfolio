@@ -6,9 +6,14 @@ let currentPhrases = phrasesIT;
 function setLang(lang) {
     localStorage.setItem('portfolio_lang', lang);
     
-    // Aggiorna tutti gli elementi testuali
+    // Aggiorna tutti gli elementi testuali e i link
     document.querySelectorAll('[data-it]').forEach(el => {
         el.innerHTML = el.getAttribute('data-' + lang);
+        
+        // Verifica se l'elemento ha un link specifico per la lingua e lo aggiorna
+        if (el.hasAttribute('data-link-' + lang)) {
+            el.href = el.getAttribute('data-link-' + lang);
+        }
     });
     
     // Aggiorna lo stato visivo dei pulsanti lingua
