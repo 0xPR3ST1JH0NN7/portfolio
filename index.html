@@ -1,148 +1,84 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Prestigiovanni | Portfolio</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.8em' font-size='80' fill='%23ff003c' font-family='monospace' font-weight='bold'>&gt;_</text></svg>">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js" defer></script>
-</head>
-<body>
+---
+layout: default
+title: "William Prestigiovanni | Portfolio"
+header_quote: "Hello, friend."
+---
 
-    <div class="cyber-grid"></div>
-    <canvas id="matrixCanvas"></canvas>
+<main>
+    <section class="hero-section" id="hero">
+        <div class="status-bar">
+            <span class="status-blink"></span>
+            <span data-it="ROMA, ITALIA" data-en="ROME, ITALY">ROMA, ITALIA</span>
+        </div>
+        
+        <h1 class="glitch-text" data-it="WILLIAM PRESTIGIOVANNI" data-en="WILLIAM PRESTIGIOVANNI" data-text="WILLIAM PRESTIGIOVANNI">WILLIAM PRESTIGIOVANNI</h1>
+        <div class="typewriter-sub" id="typewriter"></div>
 
-    <header>
-        <nav class="nav-container">
-            <a href="index.html" class="logo">0xPR3ST1JH0NN7 // Hello, friend.</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active" data-it="HOME" data-en="HOME">HOME</a></li>
-                <li><a href="/projects/index.html" data-it="PROGETTI" data-en="PROJECTS">PROGETTI</a></li>
-                <li><a href="/contacts/index.html" data-it="CONTATTI" data-en="CONTACTS">CONTATTI</a></li>
-                <li class="lang-switch">
-                    <span id="lang-it" onclick="setLang('it')">IT</span> <span style="color:var(--text-muted)">/</span> 
-                    <span id="lang-en" onclick="setLang('en')">EN</span>
-                </li>
-            </ul>
-        </nav>
-    </header>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/08b63b298/" target="_blank" rel="noopener noreferrer" class="cyber-btn" data-it="LINKEDIN" data-en="LINKEDIN" data-link-it="https://www.linkedin.com/in/08b63b298/" data-link-en="https://www.linkedin.com/in/08b63b298/?locale=en_US">LINKEDIN</a>
+            <a href="https://github.com/0xPR3ST1JH0NN7/" target="_blank" rel="noopener noreferrer" class="cyber-btn" data-it="GITHUB" data-en="GITHUB">GITHUB</a>
+            <a href="https://app.hackthebox.com/users/1541775" target="_blank" rel="noopener noreferrer" class="cyber-btn" data-it="HACK THE BOX" data-en="HACK THE BOX">HACKTHEBOX</a>
+        </div>
 
-    <main>
-        <section class="hero-section" id="hero">
-            <div class="status-bar">
-                <span class="status-blink"></span>
-                <span data-it="ROMA, ITALIA" data-en="ROME, ITALY">ROMA, ITALIA</span>
-            </div>
-            
-            <h1 class="glitch-text" data-it="WILLIAM PRESTIGIOVANNI" data-en="WILLIAM PRESTIGIOVANNI" data-text="WILLIAM PRESTIGIOVANNI">WILLIAM PRESTIGIOVANNI</h1>
-            <div class="typewriter-sub" id="typewriter"></div>
-
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/08b63b298/" target="_blank" rel="noopener noreferrer" class="cyber-btn" data-it="LINKEDIN" data-en="LINKEDIN" data-link-it="https://www.linkedin.com/in/08b63b298/" data-link-en="https://www.linkedin.com/in/08b63b298/?locale=en_US">LINKEDIN</a>
-                <a href="https://github.com/0xPR3ST1JH0NN7/" target="_blank" rel="noopener noreferrer" class="cyber-btn" data-it="GITHUB" data-en="GITHUB">GITHUB</a>
-                <a href="https://app.hackthebox.com/users/1541775" target="_blank" rel="noopener noreferrer" class="cyber-btn" data-it="HACK THE BOX" data-en="HACK THE BOX">HACKTHEBOX</a>
-            </div>
-
-            <div class="terminal-container">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="t-btn close"></span>
-                        <span class="t-btn"></span>
-                        <span class="t-btn"></span>
-                    </div>
-                    <div class="terminal-title">kali@0xPR3ST1JH0NN7:~</div>
-                    <div></div>
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="t-btn close"></span>
+                    <span class="t-btn"></span>
+                    <span class="t-btn"></span>
                 </div>
-                <div class="terminal-tabs">
-                    <button class="tab active" onclick="switchTab(event, 'bio')">tty1</button>
-                    <button class="tab" onclick="switchTab(event, 'mission')">tty2</button>
-                </div>
-                <div class="terminal-body">
-                    <div id="bio" class="tab-content active">
-                        <div class="cmd-line">kali@0xPR3ST1JH0NN7:~ whoami</div>
-                        <div class="cmd-output" data-it="Come consulente di sicurezza offensiva, eseguo attività di vulnerability assessment e penetration test in contesti complessi legati ad applicazioni web, infrastrutture di rete e architetture Wi-Fi. Sviluppo soluzioni dedicate e simulazioni mirate per guidare in modo concreto la messa in sicurezza degli asset aziendali critici. Attivo nel settore della sicurezza informatica, focalizzato sulla ricerca avanzata di vulnerabilità e sullo sviluppo di vettori di attacco controllati." data-en="As an offensive security consultant, I execute vulnerability assessments and penetration tests in complex environments including web applications, network infrastructures, and Wi-Fi architectures. I develop custom solutions and targeted simulations to effectively guide the securing of critical business assets. Active in the cybersecurity sector, focused on advanced vulnerability research and the development of controlled attack vectors.">
-                            Come consulente di sicurezza offensiva, eseguo attività di vulnerability assessment e penetration test in contesti complessi legati ad applicazioni web, infrastrutture di rete e architetture Wi-Fi. Sviluppo soluzioni dedicate e simulazioni mirate per guidare in modo concreto la messa in sicurezza degli asset aziendali critici. Attivo nel settore della sicurezza informatica, focalizzato sulla ricerca avanzata di vulnerabilità e sullo sviluppo di vettori di attacco controllati.
-                        </div>
+                <div class="terminal-title">kali@0xPR3ST1JH0NN7:~</div>
+                <div></div>
+            </div>
+            <div class="terminal-tabs">
+                <button class="tab active" onclick="switchTab(event, 'bio')">tty1</button>
+                <button class="tab" onclick="switchTab(event, 'mission')">tty2</button>
+            </div>
+            <div class="terminal-body">
+                <div id="bio" class="tab-content active">
+                    <div class="cmd-line">kali@0xPR3ST1JH0NN7:~ whoami</div>
+                    <div class="cmd-output" data-it="Come consulente di sicurezza offensiva..." data-en="As an offensive security consultant...">
+                        Come consulente di sicurezza offensiva, eseguo attività di vulnerability assessment e penetration test in contesti complessi legati ad applicazioni web, infrastrutture di rete e architetture Wi-Fi. Sviluppo soluzioni dedicate e simulazioni mirate per guidare in modo concreto la messa in sicurezza degli asset aziendali critici. Attivo nel settore della sicurezza informatica, focalizzato sulla ricerca avanzata di vulnerabilità e sullo sviluppo di vettori di attacco controllati.
                     </div>
-                    <div id="mission" class="tab-content">
-                        <div class="cmd-line">kali@0xPR3ST1JH0NN7:~ cat experience.txt</div>
-                        <div class="cmd-output">
-                            <span data-it="• Red Teaming e simulazione di minacce persistenti avanzate (APT)" data-en="• Red Teaming and Advanced Persistent Threat (APT) simulation">• Red Teaming e simulazione di minacce persistenti avanzate (APT)</span><br>
-                            <span data-it="• Threat Intelligence applicata alla difesa proattiva" data-en="• Threat Intelligence applied to proactive defense">• Threat Intelligence applicata alla difesa proattiva</span><br>
-                            <span data-it="• Analisi dei protocolli wireless ed elusione di sistemi di sicurezza perimetrali" data-en="• Wireless protocol analysis and perimeter security evasion">• Analisi dei protocolli wireless ed elusione di sistemi di sicurezza perimetrali</span><br>
-                            <span data-it="• Ricerca e sviluppo di software offensivo custom per scopi di auditing autorizzato" data-en="• Research and development of custom offensive software for authorized auditing purposes">• Ricerca e sviluppo di software offensivo custom per scopi di auditing autorizzato</span>
-                        </div>
+                </div>
+                <div id="mission" class="tab-content">
+                    <div class="cmd-line">kali@0xPR3ST1JH0NN7:~ cat experience.txt</div>
+                    <div class="cmd-output">
+                        <span data-it="• Red Teaming e simulazione di minacce persistenti avanzate (APT)" data-en="• Red Teaming and Advanced Persistent Threat (APT) simulation">• Red Teaming e simulazione di minacce persistenti avanzate (APT)</span><br>
+                        <span data-it="• Threat Intelligence applicata alla difesa proattiva" data-en="• Threat Intelligence applied to proactive defense">• Threat Intelligence applicata alla difesa proattiva</span><br>
+                        <span data-it="• Analisi dei protocolli wireless ed elusione di sistemi di sicurezza perimetrali" data-en="• Wireless protocol analysis and perimeter security evasion">• Analisi dei protocolli wireless ed elusione di sistemi di sicurezza perimetrali</span><br>
+                        <span data-it="• Ricerca e sviluppo di software offensivo custom per scopi di auditing autorizzato" data-en="• Research and development of custom offensive software for authorized auditing purposes">• Ricerca e sviluppo di software offensivo custom per scopi di auditing autorizzato</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- <section id="certificazioni" class="cert-section">
-            <h2 class="glitch-text" data-it="CERTIFICAZIONI" data-en="CERTIFICATIONS" data-text="CERTIFICAZIONI">CERTIFICAZIONI</h2>
-            
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="/assets/img/oscp.png" alt="OSCP Certification">
-                    </a>
+    <section id="formazione" class="edu-section">
+        <h2 class="glitch-text" data-it="PERCORSO ACCADEMICO" data-en="ACADEMIC TIMELINE" data-text="PERCORSO ACCADEMICO">PERCORSO ACCADEMICO</h2>
+        
+        <div class="edu-timeline">
+            <div class="edu-card active-studying">
+                <div class="edu-header">
+                    <span class="edu-date">2024 — 2026</span>
+                    <h3 data-it="Laurea Magistrale in Cybersecurity" data-en="Master's Degree in Cybersecurity">Laurea Magistrale in Cybersecurity</h3>
                 </div>
-                <div class="cert-card">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="/assets/img/oscp_plus.png" alt="OSCP+ Certification">
-                    </a>
-                </div>
-                <div class="cert-card">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="/assets/img/CPTS.webp" alt="HTB CPTS Certification">
-                    </a>
-                </div>
-                <div class="cert-card">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="/assets/img/CWPE.webp" alt="CWPE Certification">
-                    </a>
-                </div>
+                <p class="edu-institution">Sapienza Università di Roma</p>
+                <p class="edu-details" data-it="Focalizzazione su offensive security..." data-en="Focus on offensive security...">
+                   Focalizzazione su offensive security, crittografia applicata e analisi dei protocolli di rete. Completamento previsto Ottobre 2026.
+                </p>
             </div>
-        </section> -->
 
-        <section id="formazione" class="edu-section">
-            <h2 class="glitch-text" data-it="PERCORSO ACCADEMICO" data-en="ACADEMIC TIMELINE" data-text="PERCORSO ACCADEMICO">PERCORSO ACCADEMICO</h2>
-            
-            <div class="edu-timeline">
-                <div class="edu-card active-studying">
-                    <div class="edu-header">
-                        <span class="edu-date">2024 — 2026</span>
-                        <h3 data-it="Laurea Magistrale in Cybersecurity" data-en="Master's Degree in Cybersecurity">Laurea Magistrale in Cybersecurity</h3>
-                    </div>
-                    <p class="edu-institution">Sapienza Università di Roma</p>
-                    <p class="edu-details" 
-                       data-it="Focalizzazione su offensive security, crittografia applicata e analisi dei protocolli di rete. Completamento previsto Ottobre 2026." 
-                       data-en="Focus on offensive security, applied cryptography, and network protocol analysis. Expected completion October 2026.">
-                       Focalizzazione su offensive security, crittografia applicata e analisi dei protocolli di rete. Completamento previsto Ottobre 2026.
-                    </p>
+            <div class="edu-card">
+                <div class="edu-header">
+                    <span class="edu-date">2021 — 2024</span>
+                    <h3 data-it="Laurea Triennale in Informatica" data-en="Bachelor's Degree in Computer Science">Laurea Triennale in Informatica</h3>
                 </div>
-
-                <div class="edu-card">
-                    <div class="edu-header">
-                        <span class="edu-date">2021 — 2024</span>
-                        <h3 data-it="Laurea Triennale in Informatica" data-en="Bachelor's Degree in Computer Science">Laurea Triennale in Informatica</h3>
-                    </div>
-                    <p class="edu-institution">Università degli Studi di Roma Tor Vergata</p>
-                    <p class="edu-details" 
-                       data-it="Percorso focalizzato sulle fondamenta dell'informatica, programmazione software, architetture dei sistemi operativi e basi di reti di calcolatori. Votazione finale 100/110." 
-                       data-en="Core curriculum focused on computer science fundamentals, software engineering, operating systems architecture, and computer networking. Final grade 100/110.">
-                       Percorso focalizzato sulle fondamenta dell'informatica, programmazione software, architetture dei sistemi operativi e basi di reti di calcolatori. Votazione finale 100/110.
-                    </p>
-                </div>
+                <p class="edu-institution">Università degli Studi di Roma Tor Vergata</p>
+                <p class="edu-details" data-it="Percorso focalizzato sulle fondamenta..." data-en="Core curriculum focused on computer science fundamentals...">
+                   Percorso focalizzato sulle fondamenta dell'informatica, programmazione software, architetture dei sistemi operativi e basi di reti di calcolatori. Votazione finale 100/110.
+                </p>
             </div>
-        </section>
-    </main>
-
-    <footer>
-    <div class="footer-container">
-        <p data-it="&copy; 2026 William Prestigiovanni. Tutti i diritti riservati." data-en="&copy; 2026 William Prestigiovanni. All rights reserved.">&copy; 2026 William Prestigiovanni. Tutti i diritti riservati.</p>
-    </div>
-</footer>
-
-</body>
-</html>
+        </div>
+    </section>
+</main>
