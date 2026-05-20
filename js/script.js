@@ -35,7 +35,7 @@ function setLang(lang) {
 
 // Inizializza al caricamento
 window.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('portfolio_lang') || 'it';
+    const savedLang = localStorage.getItem('portfolio_lang') || 'en';
     setLang(savedLang);
 });
 
