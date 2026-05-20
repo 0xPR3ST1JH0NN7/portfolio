@@ -16,10 +16,10 @@ permalink: /publications/
             <button class="tab" onclick="filterCategory('blog', this)">RICERCA</button>
         </div>
 
-        <div class="grid-layout" id="posts-grid">
+        <div class="square-layout" id="posts-grid">
             
             {% for post in site.posts %}
-            <div class="cyber-card post-item {{ post.category }}">
+            <div class="cyber-card square-card post-item {{ post.category }}">
                 
                 <span class="card-tag">
                     {% if post.category == 'writeup' %}
