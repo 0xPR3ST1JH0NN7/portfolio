@@ -1,2 +1,7 @@
+title: "William Prestigiovanni | Portfolio"
+description: "Portfolio personale"
 url: "https://0xpr3st1jh0nn7.github.io"
-baseurl: "/portfolio"
+baseurl: ""
+
+# Per GitHub Pages senza tema esterno
+plugins: []
