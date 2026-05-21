@@ -1,7 +1,6 @@
 ---
-layout: default
-title: "Analisi del protocollo SAE in WPA3"
+# Per un articolo
 category: blog
-description: "Uno studio approfondito sulle differenze di handshake tra WPA2 e WPA3, e le implicazioni pratiche per gli attacchi a dizionario."
+tags: [offensive, red-team]   # opzionale
 ---
 Testo dell'articolo...

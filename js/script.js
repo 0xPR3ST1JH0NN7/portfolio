@@ -163,3 +163,34 @@ function filterCategory(category, element) {
         }
     });
 }
+
+/* ── Tab switcher ── */
+function switchPubTab(panel, btn) {
+  document.querySelectorAll('.pub-tab').forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  document.querySelectorAll('.pub-panel').forEach(p => p.classList.remove('active'));
+
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  document.getElementById('panel-' + panel).classList.add('active');
+}
+
+/* ── Difficulty filter ── */
+function filterDifficulty(diff, btn) {
+  document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const cards = document.querySelectorAll('.htb-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    const match = diff === 'all' || card.dataset.difficulty === diff;
+    card.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+
+  const empty = document.getElementById('htb-empty');
+  if (empty) empty.classList.toggle('hidden', visible > 0);
+}

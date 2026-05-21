@@ -1,8 +1,7 @@
 ---
-layout: default
-title: "SolidState - Hack The Box"
+# Per un write-up HTB
 category: writeup
-difficulty: "Medium"
-description: "Sfruttamento di vulnerabilità su Apache James Server per ottenere una shell e successiva privilege escalation tramite script bash mal configurati."
+difficulty: medium    # easy / medium / hard / insane
+os: linux             # linux / windows (opzionale)
 ---
 Testo del writeup...

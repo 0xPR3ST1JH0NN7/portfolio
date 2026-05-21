@@ -1,48 +1,144 @@
 ---
 layout: default
-title: "William Prestigiovanni | Portfolio"
-header_quote: "Are a 0 or a 1?"
+title: "William Prestigiovanni | Publications"
+header_quote: "Are you a 0 or a 1?"
 permalink: /publications/
 ---
 
 <main>
-    <section id="publications" class="hero-section" style="border-bottom: none;">
-        <h1 class="glitch-text" data-it="PUBBLICAZIONI" data-en="PUBLICATIONS" data-text="PUBBLICAZIONI">PUBBLICAZIONI</h1>
-        <p style="margin-bottom: 40px; color: var(--text-muted);" data-it="Raccolta di write-up, ricerche e riflessioni sulla sicurezza offensiva." data-en="Collection of write-ups, research, and thoughts on offensive security.">Raccolta di write-up, ricerche e riflessioni sulla sicurezza offensiva.</p>
+  <section id="publications" class="pub-section">
 
-        <div class="terminal-tabs" style="margin-bottom: 40px; display: inline-flex; border: 1px solid var(--border-color); border-radius: 4px;">
-            <button class="tab active" onclick="filterCategory('all', this)">TUTTI</button>
-            <button class="tab" onclick="filterCategory('writeup', this)">WRITE-UPS</button>
-            <button class="tab" onclick="filterCategory('blog', this)">RICERCA</button>
-        </div>
+    <!-- HEADER -->
+    <h1 class="glitch-text" data-text="PUBLICATIONS"
+        data-it="PUBBLICAZIONI" data-en="PUBLICATIONS">PUBBLICAZIONI</h1>
+    <p class="pub-subtitle"
+       data-it="Raccolta di write-up, ricerche e riflessioni sulla sicurezza offensiva."
+       data-en="Collection of write-ups, research, and thoughts on offensive security.">
+      Raccolta di write-up, ricerche e riflessioni sulla sicurezza offensiva.
+    </p>
 
-        <div class="grid-six" id="posts-grid">
-            
-            {% for post in site.posts %}
-            <a href="{{ site.baseurl }}{{ post.url }}" class="cyber-card square-card-six">
-                
-                <span class="card-tag">
-                    {% if post.category == 'writeup' %}
-                        HTB // {{ post.difficulty | upcase }}
-                    {% else %}
-                        BLOG // {{ post.date | date: "%d/%m/%Y" }}
-                    {% endif %}
-                </span>
-                
-                <h3 class="card-title">{{ post.title }}</h3>
-                
-                <p class="card-desc">
-                    {% if post.description %}
-                        {{ post.description }}
-                    {% else %}
-                        {{ post.excerpt | strip_html | truncatewords: 20 }}
-                    {% endif %}
-                </p>
-               
+    <!-- TAB SWITCHER: HTB vs ARTICLES -->
+    <div class="pub-tab-switcher" role="tablist">
+      <button class="pub-tab active" role="tab"
+              aria-selected="true" aria-controls="panel-htb"
+              onclick="switchPubTab('htb', this)"
+              data-it="HTB WRITE-UPS" data-en="HTB WRITE-UPS">
+        <span class="pub-tab-icon">⬡</span> HTB WRITE-UPS
+      </button>
+      <button class="pub-tab" role="tab"
+              aria-selected="false" aria-controls="panel-articles"
+              onclick="switchPubTab('articles', this)"
+              data-it="ARTICOLI" data-en="ARTICLES">
+        <span class="pub-tab-icon">▸</span>
+        <span data-it="ARTICOLI" data-en="ARTICLES">ARTICOLI</span>
+      </button>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         PANEL 1 — HTB WRITE-UPS
+    ════════════════════════════════════════ -->
+    <div id="panel-htb" class="pub-panel active" role="tabpanel">
+
+      <!-- Difficulty filter -->
+      <div class="diff-filter" aria-label="Filtra per difficoltà">
+        <button class="diff-btn active" data-diff="all"
+                onclick="filterDifficulty('all', this)">ALL</button>
+        <button class="diff-btn easy"   data-diff="easy"
+                onclick="filterDifficulty('easy', this)">EASY</button>
+        <button class="diff-btn medium" data-diff="medium"
+                onclick="filterDifficulty('medium', this)">MEDIUM</button>
+        <button class="diff-btn hard"   data-diff="hard"
+                onclick="filterDifficulty('hard', this)">HARD</button>
+        <button class="diff-btn insane" data-diff="insane"
+                onclick="filterDifficulty('insane', this)">INSANE</button>
+      </div>
+
+      <!-- HTB cards grid -->
+      <div class="htb-grid" id="htb-grid">
+        {% assign writeups = site.posts | where: "category", "writeup" %}
+        {% if writeups.size == 0 %}
+          <p class="pub-empty" data-it="Nessun write-up pubblicato ancora." data-en="No write-ups published yet.">Nessun write-up pubblicato ancora.</p>
+        {% else %}
+          {% for post in writeups %}
+          <a href="{{ site.baseurl }}{{ post.url }}"
+             class="htb-card"
+             data-difficulty="{{ post.difficulty | downcase }}">
+
+            <!-- Difficulty badge -->
+            <span class="htb-badge diff-{{ post.difficulty | downcase }}">
+              {{ post.difficulty | upcase }}
+            </span>
+
+            <!-- OS badge -->
+            {% if post.os %}
+            <span class="htb-os">
+              {% if post.os == 'linux' %}🐧{% elsif post.os == 'windows' %}🪟{% endif %}
+              {{ post.os | capitalize }}
+            </span>
+            {% endif %}
+
+            <h3 class="htb-title">{{ post.title }}</h3>
+
+            <p class="htb-desc">
+              {% if post.description %}
+                {{ post.description }}
+              {% else %}
+                {{ post.excerpt | strip_html | truncatewords: 18 }}
+              {% endif %}
+            </p>
+
+            <div class="htb-meta">
+              <span class="htb-date">{{ post.date | date: "%d.%m.%Y" }}</span>
+              <span class="htb-read">READ →</span>
             </div>
-            post-item {{ post.category }}
-            {% endfor %}
+          </a>
+          {% endfor %}
+        {% endif %}
+      </div>
 
-        </div>
-    </section>
+      <!-- Empty state when filter returns nothing -->
+      <p class="pub-empty hidden" id="htb-empty"
+         data-it="Nessun write-up per questa difficoltà."
+         data-en="No write-ups for this difficulty.">
+        Nessun write-up per questa difficoltà.
+      </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         PANEL 2 — ARTICLES
+    ════════════════════════════════════════ -->
+    <div id="panel-articles" class="pub-panel" role="tabpanel">
+      <div class="articles-list" id="articles-list">
+        {% assign articles = site.posts | where: "category", "blog" %}
+        {% if articles.size == 0 %}
+          <p class="pub-empty" data-it="Nessun articolo pubblicato ancora." data-en="No articles published yet.">Nessun articolo pubblicato ancora.</p>
+        {% else %}
+          {% for post in articles %}
+          <a href="{{ site.baseurl }}{{ post.url }}" class="article-row">
+            <div class="article-date">{{ post.date | date: "%d.%m.%Y" }}</div>
+            <div class="article-body">
+              <h3 class="article-title">{{ post.title }}</h3>
+              <p class="article-desc">
+                {% if post.description %}
+                  {{ post.description }}
+                {% else %}
+                  {{ post.excerpt | strip_html | truncatewords: 25 }}
+                {% endif %}
+              </p>
+              {% if post.tags %}
+              <div class="article-tags">
+                {% for tag in post.tags %}
+                  <span class="article-tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+            <div class="article-arrow">→</div>
+          </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+
+  </section>
 </main>
