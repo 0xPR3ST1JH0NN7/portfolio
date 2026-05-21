@@ -36,16 +36,18 @@ permalink: /publications/
                     <a href="{{ site.baseurl }}{{ post.url }}" class="cyber-card htb-item htb-machine-card" data-difficulty="{{ post.difficulty | downcase }}">
                         
                         <div class="htb-card-media">
-                            <img src="{{ site.baseurl }}{{ post.machine_image | default: '/assets/images/placeholder-machine.png' }}" alt="{{ post.title }} Machine">
+                            <img src="{{ site.baseurl }}{{ post.machine_image | default: '/assets/images/placeholder-machine.png' }}" alt="{{ post.title }}">
                         </div>
                         
                         <div class="htb-card-details">
                             <h3 class="card-title">{{ post.title }}</h3>
                             
                             <div class="htb-meta-row">
-                                <span class="htb-os-icon os-{{ post.os | downcase }}">{{ post.os | default: '?' }}</span>
+                                <span class="htb-tag difficulty-{{ post.difficulty | downcase }}">{{ post.difficulty | capitalize }}</span>
+                                <span class="htb-tag os-{{ post.os | downcase }}">{{ post.os | capitalize }}</span>
                             </div>
                         </div>
+                        
                     </a>
                     {% endif %}
                 {% endfor %}
