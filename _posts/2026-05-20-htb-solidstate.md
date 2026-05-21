@@ -1,7 +1,8 @@
 ---
-# Per un write-up HTB
+layout: default
+title: "SolidState - Hack The Box"
 category: writeup
-difficulty: medium    # easy / medium / hard / insane
-os: linux             # linux / windows (opzionale)
+difficulty: "Medium"    # Usa "Easy", "Medium", "Hard" o "Insane"
+os: "Linux"             # Opzionale, per indicare il sistema operativo
+description: "Sfruttamento di vulnerabilità su Apache James Server per ottenere una shell."
 ---
-Testo del writeup...

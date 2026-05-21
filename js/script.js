@@ -164,33 +164,51 @@ function filterCategory(category, element) {
     });
 }
 
-/* ── Tab switcher ── */
-function switchPubTab(panel, btn) {
-  document.querySelectorAll('.pub-tab').forEach(t => {
-    t.classList.remove('active');
-    t.setAttribute('aria-selected', 'false');
-  });
-  document.querySelectorAll('.pub-panel').forEach(p => p.classList.remove('active'));
-
-  btn.classList.add('active');
-  btn.setAttribute('aria-selected', 'true');
-  document.getElementById('panel-' + panel).classList.add('active');
+/* ========================================================
+   GESTIONE SEZIONE PUBBLICAZIONI (Tab & Filtri HTB)
+======================================================== */
+function switchPubTab(evt, tabId) {
+    // Nascondi tutti i contenuti delle tab
+    const contents = document.querySelectorAll('.pub-tab-content');
+    contents.forEach(content => {
+        content.classList.remove('active');
+        content.style.display = 'none';
+    });
+    
+    // Rimuovi classe active dai bottoni delle tab
+    const tabs = document.querySelectorAll('#publications .terminal-tabs .tab');
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Mostra il contenuto selezionato
+    const selectedContent = document.getElementById(tabId);
+    if (selectedContent) {
+        selectedContent.classList.add('active');
+        selectedContent.style.display = 'block';
+    }
+    
+    // Aggiungi active al bottone cliccato
+    evt.currentTarget.classList.add('active');
 }
 
-/* ── Difficulty filter ── */
-function filterDifficulty(diff, btn) {
-  document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+function filterDifficulty(diff, btnElement) {
+    // Gestione stato visivo bottoni filtro
+    document.querySelectorAll('.diff-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    btnElement.classList.add('active');
 
-  const cards = document.querySelectorAll('.htb-card');
-  let visible = 0;
-
-  cards.forEach(card => {
-    const match = diff === 'all' || card.dataset.difficulty === diff;
-    card.style.display = match ? '' : 'none';
-    if (match) visible++;
-  });
-
-  const empty = document.getElementById('htb-empty');
-  if (empty) empty.classList.toggle('hidden', visible > 0);
+    // Mostra/Nascondi le card di HTB in base all'attributo data-difficulty
+    const items = document.querySelectorAll('.htb-item');
+    items.forEach(item => {
+        if (diff === 'all' || item.getAttribute('data-difficulty') === diff) {
+            // Usa stringa vuota per ripristinare il display: flex di default del CSS
+            item.style.display = ''; 
+            // Breve animazione per il rientro
+            item.style.animation = 'fadeIn 0.3s ease';
+        } else {
+            item.style.display = 'none';
+        }
+    });
 }
