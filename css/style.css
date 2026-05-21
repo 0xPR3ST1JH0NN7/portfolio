@@ -887,6 +887,16 @@ footer {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
 
+/* Inserisce l'emoji del pinguino e uno spazio prima del testo */
+.htb-tag.os-linux::before {
+    content: "🐧 ";
+}
+
+/* Inserisce l'emoji della finestra per Windows, per mantenere coerenza */
+.htb-tag.os-windows::before {
+    content: "🪟 ";
+}
+
 /* Bordo card colorato all'hover basato sulla difficoltà */
 .htb-item.htb-machine-card:hover[data-difficulty="easy"] { border-color: #a4de02; }
 .htb-item.htb-machine-card:hover[data-difficulty="medium"] { border-color: #ffc107; }
