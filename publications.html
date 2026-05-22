@@ -10,14 +10,25 @@ permalink: /publications/
         <h1 class="glitch-text" data-it="PUBBLICAZIONI" data-en="PUBLICATIONS" data-text="PUBBLICAZIONI">PUBBLICAZIONI</h1>
         <p style="margin-bottom: 40px; color: var(--text-muted);" data-it="Raccolta di write-up, ricerche e riflessioni sulla sicurezza offensiva." data-en="Collection of write-ups, research, and thoughts on offensive security.">Raccolta di write-up, ricerche e riflessioni sulla sicurezza offensiva.</p>
 
-        <div class="terminal-tabs" style="margin-bottom: 30px; display: inline-flex; border: 1px solid var(--border-color); border-radius: 4px;">
-            <button class="tab active" onclick="switchPubTab(this, 'htb-tab')">HTB WRITE-UPS</button>
-            <button class="tab" onclick="switchPubTab(this, 'articles-tab')">ARTICLES</button>
+        <div id="choice-menu" class="big-choices-container">
+            <div class="big-choice-card" onclick="openSection('htb-section')">
+                <div class="choice-icon">🖧</div>
+                <h2 data-it="HTB WRITE-UPS" data-en="HTB WRITE-UPS">HTB WRITE-UPS</h2>
+                <p data-it="Macchine compromesse e metodologie" data-en="Compromised machines and methodologies">Macchine compromesse e metodologie</p>
+            </div>
+            <div class="big-choice-card" onclick="openSection('articles-section')">
+                <div class="choice-icon">📝</div>
+                <h2 data-it="ARTICOLI" data-en="ARTICLES">ARTICOLI</h2>
+                <p data-it="Ricerche, guide e analisi" data-en="Research, guides and analysis">Ricerche, guide e analisi</p>
+            </div>
         </div>
 
-        <div id="htb-tab" class="pub-tab-content active">
+        <div id="htb-section" class="pub-section" style="display: none;">
+            <button class="cyber-btn back-btn" onclick="backToMenu()">
+                &lt; <span data-it="TORNA AL MENU" data-en="BACK TO MENU">TORNA AL MENU</span>
+            </button>
             
-            <div class="htb-filters">
+            <div class="htb-filters" style="margin-top: 20px;">
                 <button class="diff-btn active" data-diff="all" onclick="filterDifficulty('all', this)">ALL</button>
                 <button class="diff-btn diff-easy" data-diff="easy" onclick="filterDifficulty('easy', this)">EASY</button>
                 <button class="diff-btn diff-medium" data-diff="medium" onclick="filterDifficulty('medium', this)">MEDIUM</button>
@@ -31,7 +42,7 @@ permalink: /publications/
                     <a href="{{ site.baseurl }}{{ post.url }}" class="cyber-card htb-item htb-machine-card" data-difficulty="{{ post.difficulty | downcase }}">
                         
                         <div class="htb-card-media">
-                            <img src="{{ site.baseurl }}{{ post.machine_image | default: '/assets/images/placeholder-machine.png' }}" alt="{{ post.title }}">
+                            <img src="{{ site.baseurl }}{{ post.machine_image }}" alt="{{ post.title }}">
                         </div>
                         
                         <div class="htb-card-details">
@@ -48,8 +59,12 @@ permalink: /publications/
             </div>
         </div>
 
-        <div id="articles-tab" class="pub-tab-content">
-            <div class="articles-list">
+        <div id="articles-section" class="pub-section" style="display: none;">
+            <button class="cyber-btn back-btn" onclick="backToMenu()">
+                &lt; <span data-it="TORNA AL MENU" data-en="BACK TO MENU">TORNA AL MENU</span>
+            </button>
+            
+            <div class="articles-list" style="margin-top: 20px;">
                 {% for post in site.posts %}
                     {% if post.category != 'writeup' %}
                     <a href="{{ site.baseurl }}{{ post.url }}" class="article-card">
