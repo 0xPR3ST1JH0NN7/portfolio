@@ -31,6 +31,14 @@
         </nav>
     </header>
 
+    {% if page.category %}
+    <div style="max-width: 1200px; margin: 40px auto 0 auto; padding: 0 20px;">
+        <a href="{{ '/publications/' | relative_url }}" class="cyber-btn back-btn" style="text-decoration: none; display: inline-block;">
+            &lt; <span data-it="TORNA ALLE PUBBLICAZIONI" data-en="BACK TO PUBLICATIONS">TORNA ALLE PUBBLICAZIONI</span>
+        </a>
+    </div>
+    {% endif %}
+
     {{ content }}
 
     <footer>

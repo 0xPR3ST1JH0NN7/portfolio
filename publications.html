@@ -11,17 +11,17 @@ permalink: /publications/
         <p style="margin-bottom: 40px; color: var(--text-muted);" data-it="Raccolta di write-up, ricerche e riflessioni sulla sicurezza offensiva." data-en="Collection of write-ups, research, and thoughts on offensive security.">Raccolta di write-up, ricerche e riflessioni sulla sicurezza offensiva.</p>
 
         <div id="choice-menu" class="big-choices-container">
-            <div class="big-choice-card" onclick="openSection('htb-section')">
-                <div class="choice-icon">🖧</div>
-                <h2 data-it="HTB WRITE-UPS" data-en="HTB WRITE-UPS">HTB WRITE-UPS</h2>
-                <p data-it="Macchine compromesse e metodologie" data-en="Compromised machines and methodologies">Macchine compromesse e metodologie</p>
-            </div>
-            <div class="big-choice-card" onclick="openSection('articles-section')">
-                <div class="choice-icon">📝</div>
-                <h2 data-it="ARTICOLI" data-en="ARTICLES">ARTICOLI</h2>
-                <p data-it="Ricerche, guide e analisi" data-en="Research, guides and analysis">Ricerche, guide e analisi</p>
-            </div>
-        </div>
+    <div class="big-choice-card" onclick="openSection('htb-section')">
+        <img src="{{ site.baseurl }}/assets/img/htb-icon.png" alt="HTB" class="choice-icon" style="width: 80px; height: 80px; object-fit: contain;">
+        <h2 data-it="HTB WRITE-UPS" data-en="HTB WRITE-UPS">HTB WRITE-UPS</h2>
+        <p data-it="Macchine compromesse e metodologie" data-en="Compromised machines and methodologies">Macchine compromesse e metodologie</p>
+    </div>
+    <div class="big-choice-card" onclick="openSection('articles-section')">
+        <div class="choice-icon">📝</div>
+        <h2 data-it="ARTICOLI" data-en="ARTICLES">ARTICOLI</h2>
+        <p data-it="Ricerche, guide e analisi" data-en="Research, guides and analysis">Ricerche, guide e analisi</p>
+    </div>
+</div>
 
         <div id="htb-section" class="pub-section" style="display: none;">
             <button class="cyber-btn back-btn" onclick="backToMenu()">
