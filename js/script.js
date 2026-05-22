@@ -212,3 +212,44 @@ function filterDifficulty(diff, btnElement) {
         }
     });
 }
+
+/* ========================================================
+   NAVIGAZIONE SEZIONE PUBBLICAZIONI E SHUFFLE
+======================================================== */
+function openSection(sectionId) {
+    document.getElementById('choice-menu').style.display = 'none';
+    document.getElementById('htb-section').style.display = 'none';
+    document.getElementById('articles-section').style.display = 'none';
+    
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+function backToMenu() {
+    document.getElementById('htb-section').style.display = 'none';
+    document.getElementById('articles-section').style.display = 'none';
+    
+    const menu = document.getElementById('choice-menu');
+    menu.style.display = 'grid'; 
+    menu.style.animation = 'fadeIn 0.4s ease';
+}
+
+function shuffleHTBMachines() {
+    const grid = document.getElementById('htb-grid');
+    if (!grid) return;
+    
+    const items = Array.from(grid.children);
+    
+    // Algoritmo Fisher-Yates per mescolare in modo casuale
+    for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+    }
+    
+    // Reinserisce gli elementi mescolati nella griglia
+    items.forEach(item => grid.appendChild(item));
+}
+
+// Mescola le macchine appena la pagina ha finito di caricarsi
+window.addEventListener('DOMContentLoaded', () => {
+    shuffleHTBMachines();
+});
